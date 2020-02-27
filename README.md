@@ -123,7 +123,7 @@ Recommended software versions:
     NVIDIA-Driver 418.87.01
     Docker 19.03.5 
     NVIDIA-container-runtime 1.0.0
-     NVIDIA-container-toolkit 1.0.5-1 
+    NVIDIA-container-toolkit 1.0.5-1 
     Python 3.6.9, important libraries:
     commentjson  0.8.2
     Cython  0.29.14
