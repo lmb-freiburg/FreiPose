@@ -19,8 +19,6 @@ This is the code published in conjunction with our recent paper
 	}
      
      
-and is free to use for academic research, when properly cited. For commercial use please contact the authors.
-
 
 # Overview
 
@@ -123,10 +121,9 @@ Recommended software versions:
     Ubuntu 18.04.3 LTS
     CUDA 10.1
     NVIDIA-Driver 418.87.01
-    docker-ce 5:18.09.6~3-0~ubuntu-bionic
-    docker-ce-cli 5:18.09.6~3-0~ubuntu-bionic
-    nvidia-container-runtime 2.0.0+docker18.09.6-3
-    nvidia-docker2 2.0.3+docker18.09.6-3
+    Docker 19.03.5 
+    NVIDIA-container-runtime 1.0.0
+     NVIDIA-container-toolkit 1.0.5-1 
     Python 3.6.9, important libraries:
     commentjson  0.8.2
     Cython  0.29.14
