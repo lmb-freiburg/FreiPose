@@ -14,12 +14,12 @@ The annotation tool is used for
 - On the right hand side of the tool various controls are offered:
     
     - Top box gives control over which keypoints are shown by selecting them, by default all keypoints are shown
-    - 'Delete all': Discards all predicted keypoints for this frame (use this when predictions are too far off and correcting them would actually take longer than restartin from scratch)
+    - 'Delete all': Discards all predicted keypoints for this frame (use this when predictions are too far off and correcting them would actually take longer than restarting from scratch)
     - 'Triangulate': Calculate 3D point hypothesis from given annotations.
     - 'Save': Store current annotations to 'anno.json'
-    - 'Load': Load current annotations from 'anno.json'
+    - 'Load': Load annotations from 'anno.json'
     - 'Draw reprojections': Show projections of the 3D point hypothesis as 'x'
-    - 'Draw center': Add lines indicating the exact location of a keypoint additionally to their ususal circular appearance.
+    - 'Draw center': Add lines indicating the exact location of a keypoint additionally to their usual circular appearance.
     - Bottom box shows the currently shown frame and all other frames being part of this labeled_set
 
 
@@ -48,10 +48,11 @@ The Tool assumes the file ending of frames to label is a priori known as default
 ## Using the tool
 
 - 'Mouse wheel': Zooming in and out of the left hand side frames
-- 'Left mouse button', when **not on** any keypoint: Translating the frames shown left, right, up or down. (Ususally, used when zoomed in)
-- 'Left mouse button', when **on** any keypoint: Moving keypoint around in a drag'n'drop fashion. Ususally, points are dragged from the example view and dropped on the recorded videos, but also refining positions of previously placed keypoints is possible.
+- 'Left mouse button', when **not on** any keypoint: Translating the frames shown left, right, up or down. (Usually, used when zoomed in)
+- 'Left mouse button', when **on** any keypoint: Moving keypoint around in a drag'n'drop fashion. Usually, points are dragged from the example view and dropped on the recorded videos, but also refining positions of previously placed keypoints is possible.
 - 'Right mouse button': Delete the annotation clicked on.
 - 'Shift' + 'Right mouse button': Delete annotations from all views.
 - 'Arrow right', ->: Next frame
 - 'Arrow left', <-: Previous frame
 - 't': Triangulate 2D annotations to 3D
+- 's': Store current annotations to 'anno.json'

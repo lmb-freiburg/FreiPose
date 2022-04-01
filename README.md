@@ -1,25 +1,22 @@
 ## FreiPose: A Deep Learning Framework for Precise Animal Motion Capture in 3D Spaces
 
-**IMPORTANT: Code will be added upon paper acceptance**
-
 We present a general purpose framework to estimate 3D locations of predefined landmarks (f.e. skeletal joints of an animal)
  given information from multiple cameras using deep learning methods.
 Our frame work is configurable which makes it easy to adapt to the specific experimentation needs and general in terms of
 number, type and location of cameras used as well as adaptable over a wide range of subjects of interest (animals, objects, humans, ...). 
 Our goal is to bring deep learning based methods into the labs, without the need of expert knowledge about machine learning.
 
-This is the code published in conjunction with our recent paper
+This is the code published in conjunction with our paper
     ```
     
 	@TechReport{Freipose2020,
-	  author    = {FreiPose: Christian Zimmermann, Artur Schneider, Mansour Alyahyay, Thomas Brox and Ilka Diester},
-	  title     = {A Deep Learning Framework for Precise Animal Motion Capture in 3D Spaces},
+	  author    = {Christian Zimmermann, Artur Schneider, Mansour Alyahyay, Thomas Brox and Ilka Diester},
+	  title     = {FreiPose: A Framework for Deep Animal Motion Capture from Multiple Views},
 	  year      = {2020},
 	  url          = {"https://lmb.informatik.uni-freiburg.de/projects/freipose/"}
 	}
      
-     
-
+as wells as recent  paper "3D pose estimation enables virtual head-fixation in freely moving rats"
 # Overview
 
 This is the main repository containing the code for pose estimation and a more detailed user guide. 
@@ -45,7 +42,7 @@ There are two main concepts used in FreiPose:
 * Is accessed through the config/Model.py class, which loads a `.cfg.json` file, f.e. `config/model_rat.cfg.json`
 * A model has some associated data and a defining skeleton
 * Inside the model file other `.cfg.json` files are referenced containing the actual data and skeleton information
-* Reason for this split is, that the skeleton is usually shared across multiple groups of data instances (i.e. you have different animals in your experiments, but all of them have the same skeleton)
+* Reason for this split is, that the skeleton is usually shared across multiple groups of data instances (i.e. you have different animals(rats *and* mice) in your experiments, but you would like to predict same skeleton)
 * The model file is passed to almost all scripts of FreiPose
 * The skeleton file describes keypoints and related information (limbs, colors, ...), f.e. `config/skel_rat.cfg.json`
 * The data file describes labeled chunks of data and trained networks that can be used for inference, f.e. `config/data_rat.cfg.json`
@@ -62,9 +59,7 @@ There are two main concepts used in FreiPose:
 
 ## Command Reference
 
-**IMPORTANT: Code will be added upon paper acceptance**
-
-Each of following scripts will provide a more detailed description on its usage when it is called with a **--help** flag.
+Each of following scripts will provide a more detailled description on its usage when it is called with a **--help** flag.
 
 
 **eval.py**
@@ -72,7 +67,7 @@ Given a Pose Network, defined through the passed model file, it calculates and a
 Which network weights are used is defined by the last entry in `pose_networks`, which is defined through the data entry of the model.
 
 **label.py**
-Given model and datset path the labeling allows to add keypoint annotations to the frames and save them into an `anno.json`.
+Given model and dataset path the labeling allows to add keypoint annotations to the frames and save them into an `anno.json`.
 The dataset is written to disk by `select.py`. Also see the [detailed description](Readme_Label.md) of the Labeling Tool.
 
 **predict_bb.py**
@@ -143,4 +138,3 @@ Recommended software versions:
     tensorflow-gpu  1.13.1
     tensorpack 0.9.4  
 
- 

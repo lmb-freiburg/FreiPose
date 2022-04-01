@@ -1,0 +1,37 @@
+{
+    "bb_networks": [
+        "weights/bb_base/frozen_inference_graph.pb"
+    ],
+    "pose_networks": [
+        "weights/pose_base/ckpt/"
+    ],
+    "preprocessing": {
+        "data_storage": "data/processed_frames/tutorial",
+        "calib_file": "calib.json",
+        "index_file_name": "index_%s.json",
+        "crop_oversampling": 2.0,
+        "crop_size": 224,
+        "bb_fixed": null
+    },
+    "datasets":[
+        {
+            "anno": "anno.json",
+            "calib": "M.json",
+            "cam_range": [1, 2, 3, 4, 5, 6, 7],
+            "db_set": "train",
+            "frame_dir": "train_set",
+            "path": "data/tutorial_data/",
+            "vid_file": null
+        },
+        {
+            "anno": "anno.json",
+            "calib": "M.json",
+            "cam_range": [1, 2, 3, 4, 5, 6, 7],
+            "db_set": "eval",
+            "frame_dir": "eval_set",
+            "path": "data/tutorial_data/",
+            "vid_file": null
+        }
+    ]
+}
+

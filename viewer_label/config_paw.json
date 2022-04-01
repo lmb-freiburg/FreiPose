@@ -1,0 +1,98 @@
+{
+  "keypoints": [
+    {
+      "name": "Wrist",
+      "coord": [196, 111],
+      "color": [128, 128, 128]
+    },
+
+    {
+      "name": "ThumbP",
+      "coord": [112, 152],
+      "color": [0, 0, 64]
+    },
+
+    {
+      "name": "IndexP",
+      "coord": [134, 162],
+      "color": [0, 64, 64]
+    },
+    {
+      "name": "IndexMP",
+      "coord": [117, 180],
+      "color": [0, 96, 96]
+    },
+    {
+      "name": "IndexT",
+      "coord": [97, 230],
+      "color": [0, 255, 255]
+    },
+
+    {
+      "name": "MiddleP",
+      "coord": [155, 158],
+      "color": [32, 64, 0]
+    },
+    {
+      "name": "MiddleMP",
+      "coord": [140, 183],
+      "color": [64, 128, 0]
+    },
+    {
+      "name": "MiddleT",
+      "coord": [124, 229],
+      "color": [128, 255, 0]
+    },
+
+    {
+      "name": "RingP",
+      "coord": [186, 152],
+      "color": [64, 32, 0]
+    },
+    {
+      "name": "RingMP",
+      "coord": [191, 179],
+      "color": [128, 64, 0]
+    },
+    {
+      "name": "RingT",
+      "coord": [178, 227],
+      "color": [255, 128, 0]
+    },
+
+    {
+      "name": "PinkyP",
+      "coord": [208, 154],
+      "color": [64, 0, 64]
+    },
+    {
+      "name": "PinkyMP",
+      "coord": [236, 180],
+      "color": [128, 0, 128]
+    },
+    {
+      "name": "PinkyT",
+      "coord": [226, 218],
+      "color": [255, 0, 255]
+    }
+  ],
+
+  "viewer": {
+    "frame_size": [1400, 1000],
+    "kp_radius": 6.0,
+    "kp_width": 2.0,
+    "example_size": [275, 259],
+    "ex_kp_radius": 4.0,
+    "ex_kp_width": 2.0,
+    "example_path": "config/example_paw.png",
+    "img_extension": "png"
+  },
+
+  "calib_path": "../M.json",
+
+  "groups": {
+    "1": ["Ear Right", "Eye Right", "Ear Left", "Eye Left", "Nose"],
+    "2": ["Paw Left Front", "Paw Left Back Mid", "Paw Left Back Tip"],
+    "3": ["Paw Right Front", "Paw Right Back Mid", "Paw Right Back Tip"]
+  }
+}
