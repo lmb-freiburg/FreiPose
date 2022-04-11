@@ -1,0 +1,88 @@
+{
+    "bb_networks": [
+    ],
+    "pose_networks": [
+        "/home/zimmermc/projects/ALTool/trainings/DLC_CMP_REACH/MVnet/train_pose0_data_100_0/ckpt/"
+    ],
+    "preprocessing": {
+        "data_storage": "storage/RatTrack_storage_tutorial_paw",
+        "calib_file": "calib.json",
+        "index_file_name": "index_%s.json",
+        "crop_oversampling": 2.0,
+        "crop_size": 224,
+        "bb_fixed": [
+            [290, 305, 890, 1010],
+            [405, 270, 950, 1005],
+            [115, 140, 1000, 940],
+            [245, 110, 960, 1010],
+            [20, 110, 1015, 1100],
+            [415, 370, 910, 950],
+            [0, 280, 450, 800]
+        ]  // This can effectively disable the bounding box network in cases of a fixed ROI, these are (num_cams, tlbr)
+    },
+    "datasets":[
+        {
+            "anno": "Esin_annotation_Run025_paw.json",
+            "calib": "run025_paw/M.json",
+            "cam_range": [1, 2, 3, 4, 5, 6, 7],
+            "db_set": "train",
+            "frame_dir": "run025_paw",
+            "path": "/misc/lmbraid18/zimmermc/datasets/RatTrack_rat_paw/",
+            "vid_file": null
+        },
+        {
+            "anno": "Esin_annotation_Run026_paw.json",
+            "calib": "run026_paw/M.json",
+            "cam_range": [1, 2, 3, 4, 5, 6, 7],
+            "db_set": "train",
+            "frame_dir": "run026_paw",
+            "path": "/misc/lmbraid18/zimmermc/datasets/RatTrack_rat_paw/",
+            "vid_file": null
+        },
+        {
+            "anno": "Esin_annotation_Run027_paw.json",
+            "calib": "run027_paw/M.json",
+            "cam_range": [1, 2, 3, 4, 5, 6, 7],
+            "db_set": "train",
+            "frame_dir": "run027_paw",
+            "path": "/misc/lmbraid18/zimmermc/datasets/RatTrack_rat_paw/",
+            "vid_file": null
+        },
+        {
+            "anno": "Esin_annotation_Run029_paw.json",
+            "calib": "run029_paw/M.json",
+            "cam_range": [1, 2, 3, 4, 5, 6, 7],
+            "db_set": "train",
+            "frame_dir": "run029_paw",
+            "path": "/misc/lmbraid18/zimmermc/datasets/RatTrack_rat_paw/",
+            "vid_file": null
+        },
+        {
+            "anno": "Esin_annotation_Run030_paw.json",
+            "calib": "run030_paw/M.json",
+            "cam_range": [1, 2, 3, 4, 5, 6, 7],
+            "db_set": "train",
+            "frame_dir": "run030_paw",
+            "path": "/misc/lmbraid18/zimmermc/datasets/RatTrack_rat_paw/",
+            "vid_file": null
+        },
+        {
+            "anno": "Esin_annotation_Run031_paw.json",
+            "calib": "run031_paw/M.json",
+            "cam_range": [1, 2, 3, 4, 5, 6, 7],
+            "db_set": "train",
+            "frame_dir": "run031_paw",
+            "path": "/misc/lmbraid18/zimmermc/datasets/RatTrack_rat_paw/",
+            "vid_file": null
+        },
+        {
+            "anno": "Esin_annotation_Run032_paw.json",
+            "calib": "run032_paw/M.json",
+            "cam_range": [1, 2, 3, 4, 5, 6, 7],
+            "db_set": "eval",
+            "frame_dir": "run032_paw",
+            "path": "/misc/lmbraid18/zimmermc/datasets/RatTrack_rat_paw/",
+            "vid_file": null
+        }
+    ]
+}

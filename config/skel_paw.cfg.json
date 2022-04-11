@@ -1,0 +1,63 @@
+{
+    "keypoints": [
+        ["Wrist", [0, 0, 0]],  //0
+        ["Ulna", [0, 0, 0]],  //1, this one turned out to be impossible to label
+        ["ThumbP", [255, 0, 0]],  //2
+        ["IndexP", [150, 0, 150]],  //3
+        ["IndexMP", [200, 0, 200]],  //4
+        ["IndexT", [255, 0, 255]],  //5
+        ["MiddleP", [0, 150, 0]],  //6
+        ["MiddleMP", [0, 200, 0]],  //7
+        ["MiddleT", [0, 255, 0]],  //8
+        ["RingP", [0, 150, 150]],  //9
+        ["RingMP", [0, 200, 200]], //10
+        ["RingT", [0, 255, 255]], //11
+        ["PinkyM", [0, 0, 150]],  //12
+        ["PinkyMP", [0, 0, 205]],  //13
+        ["PinkyT", [0, 0, 255]]  //14
+    ],
+    "limbs": [
+        [[0, 2], [255, 0, 0]],
+        [[0, 3], [150, 0, 150]], [[3, 4], [200, 0, 200]], [[4, 5], [255, 0, 255]],
+        [[0, 6], [0, 150, 0]], [[6, 7], [0, 200, 0]], [[7, 8], [0, 255, 0]],
+        [[0, 9], [0, 150, 150]], [[9, 10], [0, 200, 200]], [[10, 11], [0, 255, 255]],
+        [[0, 12], [0, 0, 150]], [[12, 13], [0, 0, 200]], [[13, 14], [0, 0, 255]]
+    ],
+
+    // Viewer relevant
+    "viewer": {
+        "example_path": "config/example_paw.png",
+
+        // Where the keypoints are located in the example_path image (order as in keypoint_names)
+        "example_keypoint_coords": [
+            [196, 111],
+            [256, 95],
+            [112, 152],
+            [134, 162],
+            [117, 180],
+            [97, 230],
+            [155, 158],
+            [140, 183],
+            [124, 229],
+            [186, 152],
+            [191, 179],
+            [178, 227],
+            [208, 154],
+            [236, 180],
+            [226, 218]
+        ],
+
+        // Define hotkey to keypoint set mappings for joint switching of visibility
+        "groups": {
+        }
+    },
+
+    // For analysis: Define local coordinate frames and transform keypoints into those
+    "coord_frames":
+    {
+    },
+
+    // For calculating pose variables
+    "body_angles": {
+    }
+}

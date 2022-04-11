@@ -1,0 +1,10 @@
+{
+  // Settings for the viewer
+  "frame_size": [1200, 1000],
+  "kp_radius": 4.0,
+  "kp_width": 2.0,
+  "example_size": [570, 222],
+  "ex_kp_radius": 6.0,
+  "ex_kp_width": 2.0,
+  "img_extension": "png"
+}

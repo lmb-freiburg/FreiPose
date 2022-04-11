@@ -1,0 +1,144 @@
+{
+    "keypoints": [
+        ["Ear Right", [0, 128, 255]],  //0
+        ["Eye Right", [0, 164, 255]],  //1
+        ["Paw Front Right", [0, 255, 0]],  //2
+        ["Paw Back Right Ankle", [0, 255, 128]],  //3
+        ["Paw Back Right Tip", [0, 255, 164]],  //4
+        ["Ear Left", [0, 128, 255]],  //5
+        ["Eye Left", [0, 164, 255]],  //6
+        ["Paw Front Left", [255, 0, 0]],  //7
+        ["Paw Back Left Ankle", [255, 0, 128]],  //8
+        ["Paw Back Left Tip", [255, 0, 164]],  //9
+        ["Nose", [0, 200, 255]], //10
+        ["Tail", [0, 0, 255]] //11
+    ],
+    "limbs": [
+        [[0, 5], [0, 0, 255]],  //limb 0: Ear axis
+        [[1, 6], [0, 0, 255]],  //limb 1: Eye axis
+        [[10, 6], [0, 0, 255]],  //limb 2: L: Nose-Eye
+        [[6, 5], [0, 0, 255]],  //limb 3: L: Eye-Ear
+        [[10, 1], [0, 0, 255]],  //limb 4: R: Nose-Eye
+        [[1, 0], [0, 0, 255]],  //limb 5: R: Eye-Ear
+        [[[0, 5], 11], [0, 0, 255]],  //limb 6: MidPt - Tail
+        [[[0, 5], 2], [0, 255, 0]],  //limb 7: MidPt - PawFrontR
+        [[[0, 5], 7], [255, 0, 0]],  //limb 8: MidPt - PawFrontL
+        [[11, 3], [0, 255, 0]],  //limb 9: Tail-AnkleR
+        [[3, 4], [0, 255, 0]],  //limb 10: AnkleR - PawBackR
+        [[11, 8], [255, 0, 0]],  //limb 11: Tail-AnkleL
+        [[8, 9], [255, 0, 0]]  //limb 12: AnkleL-PawBackL
+    ],
+
+    // For unsupervised loss: Kinematic dependencies, ie limbs that are dependent on euach other
+    "kinematic_dep":
+    [
+        [0, 1],  //0, ear and eye axis
+        [2, 3], //1, left side face axis
+        [4, 5], //2, right side face axis
+        [6, 7], //3, front paw R to body axis
+        [6, 8], //4, front paw L to body axis
+        [6, 9], //5, back paw R to body axis
+        [6, 11], //6, back paw R to body axis
+        [9, 10], //7, back paw R ankle to end
+        [11, 12] //8, back paw L ankle to end
+    ],
+
+    // For now limits used in unsupervised training are put here
+    "limb_limits":
+    [
+        [0.028, 0.040],
+        [0.016, 0.023],
+        [0.023, 0.029],
+        [0.024, 0.036],
+        [0.022, 0.029],
+        [0.024, 0.035],
+        [0.113, 0.199],
+        [0.046, 0.095],
+        [0.050, 0.094],
+        [0.028, 0.070],
+        [0.020, 0.032],
+        [0.030, 0.073],
+        [0.019, 0.032]
+    ],
+    "limb_angle_limits":
+    [
+        [0.953, 1.000],
+        [0.910, 0.998],
+        [0.908, 0.996],
+        [0.086, 0.761],
+        [0.083, 0.770],
+        [-0.882, 0.180],
+        [-0.873, 0.220],
+        [0.672, 0.998],
+        [0.714, 0.996]
+    ],
+
+    // Viewer relevant
+    "viewer": {
+        "example_path": "config/example_rat.png",
+
+        // Where the keypoints are located in the example_path image (order as in keypoint_names)
+        "example_keypoint_coords": [
+            [104, 134],
+            [232, 151],
+            [65, 460],
+            [514, 392],
+            [440, 450],
+            [308, 91],
+            [332, 125],
+            [225, 600],
+            [650, 420],
+            [561, 510],
+            [387, 226],
+            [747, 245]
+        ],
+
+        // Define hotkey to keypoint set mappings for joint switching of visibility
+        "groups": {
+            "1": ["Ear Right", "Eye Right", "Ear Left", "Eye Left", "Nose"],
+            "2": ["Paw Left Front", "Paw Left Back Mid", "Paw Left Back Tip"],
+            "3": ["Paw Right Front", "Paw Right Back Mid", "Paw Right Back Tip"]
+        }
+    },
+
+    // For analysis: Define local coordinate frames and transform keypoints into those
+    "coord_frames":
+    {
+        "rat_local_head": {
+            "origin": ["l", [0, 5]], // list of points, mean location is the center of the coordinate frame
+            "orientation": {  // Defined by two vectors, third one is calculated appropriately
+                "y": ["l", [[0, 5], 11]],  // defined in local coords (in terms of keypoints)
+                "z": ["g", [0, -1, 0]],  // defined in global coords (world coordinates, hard coded direction, ie. dir of gravity)
+                "prio": "z"  // The axis having priority is guaranteed to be matched exactly the other one only gives a rough orientation
+            }
+          }
+    },
+
+    // For calculating pose variables
+    "body_angles": {
+        "body_elev": [
+            ["l", [11, [0, 5]]],  // [start, end]
+            ["g", [0, -1, 0]]
+        ],
+        "head_elev": [
+            ["l", [[0, 5], 10]],
+            ["g", [0, -1, 0]]
+        ],
+        "head_roll": [
+            ["l", [0, 5]],
+            ["g", [0, -1, 0]]
+        ],
+        "head_nick": [
+            ["l", [11, [0, 5]]],
+            ["l", [[0, 5], 10]]
+        ],
+        "paw_right": [
+            ["l", [11, [0, 5]]],
+            ["l", [[0, 5], 2]]
+        ],
+        "paw_left": [
+            ["l", [11, [0, 5]]],
+            ["l", [[0, 5], 7]]
+        ]
+    }
+}

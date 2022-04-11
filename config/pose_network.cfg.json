@@ -1,0 +1,47 @@
+{
+    // STUFF YOU MIGHT WANT TO CHANGE
+    "starting_checkpoint": "weights/pose_base/ckpt/",
+    "pose_job_name": "train_pose_run%d",
+    "pose_train_steps": 120000,
+    "pose_fine_tune_ckpt": null,
+    "db_train": [
+        "train"
+    ],
+    "db_test": [
+        "eval"
+    ],
+    "semisup": false,
+    "vid_list": [
+        "/misc/lmbraid18/datasets/RatPose/RatTrack_paper_resub_sessions/Rat506_200306/run046_cam%d.avi"
+    ],
+    "pred_bb_list": [
+        "/misc/lmbraid18/datasets/RatPose/RatTrack_paper_resub_sessions/Rat506_200306/pred_run046__00.json"
+    ],
+    "voxel_resolution": 0.4,
+    "voxel_dim": 64,
+
+    "use_early_stopping": false,
+    "es_steps": 4,
+    "es_rel_impr": 0,
+
+    // STUFF THAT USUALLY DOESNT CHANGE
+    "config_file": null,
+    "architectures": ["RatNetMV"],
+    "img_size": 224,
+    "train_2d_encoder": true,
+    "learning_rate_base": 1e-4,
+    "lr_decay_steps": 30000,
+    "lr_decay_rate": 0.1,
+    "loss_show_freq": 200,
+    "save_model_freq": 5000,
+    "save_sample_num": 4,
+    "eval_freq": 500,
+    "eval_steps": 20,
+    "grad_sum_freq": -1,
+    "tictoc": false,
+
+    "scorevol_sigma": 2.0,
+    "use_2drefinement_net": true,
+    "refinement_merge_method": "unproject",
+    "use_softargmax": true
+}

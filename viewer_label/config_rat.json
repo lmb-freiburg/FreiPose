@@ -1,0 +1,85 @@
+{
+  "keypoints": [
+    {
+      "name": "Ear Right",
+      "coord": [226, 19],
+      "color": [0, 128, 255]
+    },
+    {
+      "name": "Eye Right",
+      "coord": [260, 34],
+      "color": [0, 164, 255]
+    },
+    {
+      "name": "Paw Right Front",
+      "coord": [238, 149],
+      "color": [0, 255, 0]
+    },
+    {
+      "name": "Paw Right Back Mid",
+      "coord": [250, 199],
+      "color": [0, 255, 128]
+    },
+    {
+      "name": "Paw Right Back Tip",
+      "coord": [223, 214],
+      "color": [0, 255, 164]
+    },
+    
+    {
+      "name": "Ear Left",
+      "coord": [336, 54],
+      "color": [0, 128, 255]
+    },
+    {
+      "name": "Eye Left",
+      "coord": [300, 41],
+      "color": [0, 164, 255]
+    },
+    {
+      "name": "Paw Left Front",
+      "coord": [276, 165],
+      "color": [255, 0, 0]
+    },
+    {
+      "name": "Paw Left Back Mid",
+      "coord": [330, 200],
+      "color": [255, 0, 128]
+    },
+    {
+      "name": "Paw Left Back Tip",
+      "coord": [302, 218],
+      "color": [255, 0, 164]
+    },
+
+    {
+      "name": "Nose",
+      "coord": [280, 61],
+      "color": [0, 200, 255]
+    },
+    {
+      "name": "Tail",
+      "coord": [368, 200],
+      "color": [0, 0, 255]
+    }
+  ],
+
+  "viewer": {
+    "frame_size": [1400, 1000],
+    "kp_radius": 6.0,
+    "kp_width": 2.0,
+    "example_size": [570, 222],
+    "ex_kp_radius": 4.0,
+    "ex_kp_width": 2.0,
+    "example_path": "config/example_rat.png",
+    "img_extension": "png"
+  },
+
+  "calib_path": "../M.json",
+
+  "groups": {
+    "1": ["Ear Right", "Eye Right", "Ear Left", "Eye Left", "Nose"],
+    "2": ["Paw Left Front", "Paw Left Back Mid", "Paw Left Back Tip"],
+    "3": ["Paw Right Front", "Paw Right Back Mid", "Paw Right Back Tip"]
+  }
+}

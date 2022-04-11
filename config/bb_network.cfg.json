@@ -1,0 +1,15 @@
+{
+    "bb_job_name": "train_bb_run%d",
+    "bb_train_steps": 150000,
+    "bb_fine_tune_checkpoint": "weights/mobile_net/model.ckpt",
+    "bb_dataset": [
+    ],
+
+    // Stuff that ususally doesnt change
+    "bb_config_file": "bb_network/train.config",
+    "bb_label_map_path": "bb_network/label_map.pbtxt",
+    "bb_train_dataset": "bbox_data_train.record",
+    "bb_test_dataset": "bbox_data_test.record",
+    "detector_csv_train": "bbox_index_train.csv",
+    "detector_csv_test": "bbox_index_test.csv"
+}
