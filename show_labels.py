@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
     model = Model(args.model)
     df = build_dataflow(model, [args.set_name], is_train=True,
-                        threaded=False, single_sample=True)
+                        threaded=False, single_sample=False)
 
     start = None
     for idx, dp in enumerate(df.get_data()):
